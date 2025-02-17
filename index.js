@@ -3,7 +3,7 @@ const app = express();
 const port = process.env.PORT || 8080;
 
 // Base URL where you want to redirect (easy to change)
-const BASE_URL = "https://sitefixo.com";
+const BASE_URL = "https://www.ajudasolidariedade.site";
 
 app.get("/checkout/:value", (req, res) => {
   // Get the checkout value from the URL
