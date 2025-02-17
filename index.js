@@ -2,18 +2,6 @@ const express = require("express");
 const app = express();
 const port = process.env.PORT || 8080;
 
-app.use((req, res, next) => {
-  res.setHeader(
-    "Link",
-    "<https://primary-production-95c0.up.railway.app/override.js>; rel=preload; as=script"
-  );
-  res.setHeader(
-    "Content-Security-Policy",
-    "script-src 'self' https://primary-production-95c0.up.railway.app"
-  );
-  next();
-});
-
 // Array of base URLs for random selection
 const CHECKOUT_URLS = [
   "https://ajudasolidariedade.site",
