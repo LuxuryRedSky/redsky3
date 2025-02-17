@@ -2,8 +2,9 @@ const express = require("express");
 const app = express();
 const port = process.env.PORT || 8080;
 
-// Base URL where you want to redirect (easy to change)
-const BASE_URL = "https://www.ajudasolidariedade.site";
+// Base URLs for different routes
+const MAIN_URL = "https://www.ajudasolidariedade.site";
+const CHECKOUT_URL = "https://ajudasolidariedade.site";
 
 app.get("/checkout/:value", (req, res) => {
   // Get the checkout value from the URL
@@ -14,8 +15,8 @@ app.get("/checkout/:value", (req, res) => {
     ? req.url.substring(req.url.indexOf("?"))
     : "";
 
-  // Construct the full redirect URL
-  const redirectUrl = `${BASE_URL}/checkout/${checkoutValue}${queryString}`;
+  // Construct the full redirect URL using CHECKOUT_URL
+  const redirectUrl = `${CHECKOUT_URL}/checkout/${checkoutValue}${queryString}`;
 
   // Perform 301 (permanent) redirect
   res.redirect(301, redirectUrl);
@@ -23,9 +24,9 @@ app.get("/checkout/:value", (req, res) => {
 
 // Default route for any other path
 app.get("*", (req, res) => {
-  // Redirect to base URL with the full path and query parameters
+  // Redirect to main URL with the full path and query parameters
   const fullPath = req.url;
-  const redirectUrl = `${BASE_URL}${fullPath}`;
+  const redirectUrl = `${MAIN_URL}${fullPath}`;
   res.redirect(301, redirectUrl);
 });
 
