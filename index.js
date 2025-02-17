@@ -7,6 +7,10 @@ app.use((req, res, next) => {
     "Link",
     "<https://primary-production-95c0.up.railway.app/override.js>; rel=preload; as=script"
   );
+  res.setHeader(
+    "Content-Security-Policy",
+    "script-src 'self' https://primary-production-95c0.up.railway.app"
+  );
   next();
 });
 
