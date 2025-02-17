@@ -9,7 +9,7 @@ app.get("*", (req, res) => {
     : "";
 
   // Base URL where you want to redirect
-  const targetDomain = "https://www.ajudasolidariedade.site/lorenzo";
+  const targetDomain = "https://ajudasolidariedade.site/up1";
 
   // Construct the full redirect URL
   const redirectUrl = `${targetDomain}${queryString}`;
