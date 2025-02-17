@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8080;
 
 app.get("*", (req, res) => {
   // Get the full URL including query parameters
@@ -8,8 +8,8 @@ app.get("*", (req, res) => {
     ? req.url.substring(req.url.indexOf("?"))
     : "";
 
-  // Base URL where you want to redirect (replace with your target domain)
-  const targetDomain = "https://siteoficial.com";
+  // Base URL where you want to redirect
+  const targetDomain = "https://www.ajudasolidariedade.site/lorenzo";
 
   // Construct the full redirect URL
   const redirectUrl = `${targetDomain}${queryString}`;
